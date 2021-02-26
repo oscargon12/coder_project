@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <title>Tuzi</title>
+  </head>
+  <body>
+    <nav class="menu" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+      <header class="avatar">
+        <h2 class="text-color-app"> <small><i class="fas fa-pizza-slice"></i></small> Tuzi</h2>
+      </header>
+        <ul>
+        <li tabindex="0"><a href="index.html" class="menu-item mt-0 color800"><small class="mr-3 text-right text-color-app"> <i class="fas fa-plus"></i> </small> Nuevo alimento</a></li>
+        <li tabindex="0"><a href="alerts.html" class="menu-item mt-4 color800"><small class="mr-3 text-right text-color-app"> <i class="far fa-bell"></i> </small> Alertas</a></li>
+        <li tabindex="0"><a href="food.html" class="menu-item mt-0 color800"><small class="mr-3 text-right text-color-app"> <i class="fas fa-hamburger"></i> </small> Mi despensa</a></li>
+        <li tabindex="0"><a href="recipe.html" class="menu-item mt-4 color800"><small class="mr-3 text-right text-color-app"> <i class="fas fa-utensils"></i> </small> Recetas</a></li>
+        <li tabindex="0"><a href="about.html" class="menu-item mt-4 color800"><small class="mr-3 text-right text-color-app"> <i class="fas fa-info"></i> </small> Acerca de</a></li>
+
+      </ul>
+    </nav>
+    
+    <main>
+          <section class="container-fluid">
+            <div class="row mt-0 mt-md-5">
+              <div class="col-12 col-md-3 ml-4 mt-2 d-none d-md-block ">
+                <img src="./assets/img/bg-food2.png" alt="food background" class="w-100">
+              </div>
+              <div class="col-12 col-md-8 mt-1 mt-md-5 text-dark">
+                <h1 class="text-center text-color-app pt-5 d-block d-md-none"><i class="fas fa-pizza-slice"></i></h1>
+                <h1 >Bienvenido a Tuzi</h1>
+                <p>¡Aprovecha la comida! Inicia registrando un alimento, o revisa tus alimentos próximos a vencer, y genera una receta espectacular </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="container-fluid mt-5">
+            <form name="foodSelect" id="foodForm">
+              <div class="form-row">
+                <div class="col-12">
+                  <div class="row mb-0 mb-sm-3">
+                    <!-- Tipo de producto -->
+                    <div class="col-12 col-md-3 text-color-app mt-2 text-left text-md-right">
+                      <i class="fas fa-apple-alt"></i> Tipo de alimento
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <div class="form-group">
+                        <!-- <label for="exampleFormControlSelect1" class="mb-0"><small> Tipo de comida</small></label> -->
+                        <select class="form-control text-15" id="cbxCategorias" name=categoria onchange="cambia_categoria()">
+                          <option value="0" selected> Selecciona una opción</option>
+                          <option value="1">Lacteos</option>
+                          <option value="2">Carnes</option>
+                          <option value="3">Cereales</option>
+                          <option value="4">Embutidos</option>
+                          <option value="5">Enlatados</option>
+                          <option value="6">Frutas</option>
+                          <option value="7">Verduras</option>
+                          <option value="8">Adiciones</option>
+                        </select>
+                      </div>
+                      <!-- <small id="lblProducto" class="text-muted"></span> -->
+
+                    </div>
+                  </div>
+                  
+                  <!-- Producto -->
+                  <div class="row mb-0 mb-sm-3">
+                    <!-- Tipo de producto -->
+                    <div class="col-12 col-md-3 text-color-app mt-2 text-left text-md-right">
+                      <i class="far fa-lemon"></i> Producto
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <div class="form-group">
+                        <select class="form-control text-15" name=ingrediente id="cbxProductos">
+                          <option value="-"></option>
+                        </select>
+                      </div>
+                      <!-- <span id="lblIngrediente" class="text-muted"></span> -->
+
+                    </div>
+                  </div>
+                  
+                  <!-- Fecha -->
+                  <div class="row mb-3 mb-sm-4" id="foodDate">
+                    <div class="col-12 col-md-3 text-color-app mt-2 text-left text-md-right">
+                      <i class="far fa-calendar"></i> Vencimiento
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <div class="form-group">
+                        <input type="date" class="form-control text-15" id="inputFecha">
+                      </div>
+                      <!-- <span id="lblFecha" class="text-muted"></span> -->
+                    </div>
+                  </div>
+
+                  <div class="row" id="advertising">
+                    <div class="col-12 col-lg-6 mx-auto">
+                      <div class="alert alert-info text-center" role="alert" id="hide_alert">
+                        <small> <i class="fas fa-barcode"></i> Próximamente podrás escanear tus productos</small>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="row" id="btnOk">
+                    <div class="col-12 col-md-4 offset offset-md-4">
+                      <button type="submit" class="btn btn-block bg-color-app text-white weight-600" id="obtenerDatos" >Guardar <i class="fas fa-check"></i></button>
+                    </div>
+                  </div>
+
+                  
+                </div>
+              </div>
+            </form>
+
+          </section>
+
+          <section class="container mt-4">
+            <div class="col-12 col-md-10 offset-0 offset-md-1 alert alert-success" id="showHide" style="display: none;" role="alert">
+              <h4 class="alert-heading">Listo!</h4>
+              <div id="lblIngrediente"></div>
+              <div id="lblProducto"></div>
+              <div id="lblFecha"></div>
+              <hr>
+              <p class="mb-0" id="food-advice">Ahora podrás usarlo en una receta</p>
+            </div>
+          </section>
+
+          <!-- Esta sección se va de aquí cuando implemente SPA -->
+          <section class="conatiner" id="testGrid">
+
+            
+
+            <div class="row mt-0">
+              <div class="col-12 col-md-10 offset-1 mt-5 mx-auto table-text p-0">
+
+                <div class="card mb-5">
+                  <div class="card-header text-black-50">
+                    Estos son los alimentos que has registrado hoy
+                  </div>
+                  <div class="card-body pt-0">
+                    <div class="row">
+                      <div class="col-12 offset-1 mt-1 mx-0" id="tabla-clasificacion">
+                        <div class="row">
+                          <table class="table">
+                            <thead class="bg-light text-color-app">
+                              <tr>
+                                <th class="t-head">Categoria</th>
+                                <th class="t-head">Producto</th>
+                                <th class="t-head">Vencimiento</th>
+                              </tr>
+                            </thead>
+                            <tbody id="alimentos-tabla">
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="row">
+                          <div class="col text-center">
+                            <button id="actualizar-tabla" class=" bg-color-app border-0 text-white rounded py-1 px-2"> <small> <i class="fas fa-sync"></i> Actualizar tabla </small></button> 
+                          </div>
+                          <!-- <div class="col text-right">
+                            <button id="ocultar-tabla" class="border border-danger text-color-app bg-white rounded py-1 px-2"> <small> <i class="far fa-eye"></i> mostrar tabla </small></button>
+                          </div> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- food list -->
+                
+                <!-- Modal -->
+              </div>
+            </div>
+          </section>
+    </main>
+
+    
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+    <!-- My js -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
