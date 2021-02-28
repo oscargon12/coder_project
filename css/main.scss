@@ -114,13 +114,19 @@ main .helper span {
   font-weight: 500 !important;
 }
 
-.recipe-btn{
+.recipe-btn {
   color: white;
 }
 
-.recipe-btn:hover{
+.recipe-btn:hover {
   color: white;
   text-decoration: none;
+}
+
+.linked-in {
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 @media screen and (max-width: 900px) and (min-width: 400px) {

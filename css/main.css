@@ -121,6 +121,10 @@ main .helper span {
   text-decoration: none;
 }
 
+.linked-in:hover {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 900px) and (min-width: 400px) {
   body {
     padding-left: 0;
